@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rive Animation</title>
+    <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333; 
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rive-animation-container {
+            width: 50%; 
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            width: 50%; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-box img {
+            width: 100%;
+            height: auto;
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+
+        .login-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .login-box input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .login-box button {
+            width: 80%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rive-animation-container">
+            <canvas id="riveCanvas" width="600" height="400"></canvas>
+        </div>
+        <div class="login-box">
+            <img src="Logo_of_NIT_Jalandhar.png" alt="Institute Logo">
+            <h2>DR.B.R. AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY</h2>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const r = new rive.Rive({
+            src: "anshu_shashwat.riv", 
+            canvas: document.getElementById("riveCanvas"),
+            autoplay: true,
+            stateMachines: "State Machine 1",
+            onLoad: () => {
+                console.log("Rive animation loaded successfully");
+            }
+        });
+    </script>
+</body>
+</html>
